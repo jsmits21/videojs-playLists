@@ -108,7 +108,7 @@ function playList(options,arg){
     if (player.pl.current === player.pl.videos.length -1){
       player.trigger('lastVideoEnded');
     }
-    else {
+    else if (this.options().autoplayNext === true) {
       player.pl._resumeVideo();
       player.next();
     }
